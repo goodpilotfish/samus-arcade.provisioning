@@ -17,4 +17,5 @@ Stops and delets box:
 vagrant destroy
 ```
 
+## Being fancy
 ![ScreenShot](.fancy-machine.jpg)
