@@ -1,2 +1,3 @@
 # samus-arcade.provisioning
-Ansible all the afternoon
+Ansible all afternoon
+![ScreenShot](.fancy-machine.jpg)
