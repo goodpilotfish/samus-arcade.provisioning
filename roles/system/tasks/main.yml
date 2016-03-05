@@ -1,0 +1,17 @@
+---
+# file: main.yml
+- shell: echo "Getting Samus ready for some asskicking"
+
+#- name: TODO Create user janitor
+
+#- name: TODO Setup user janitor
+
+#- name: TODO Create user gamer
+
+#- name: TODO Setup user gamer
+
+#- name: TODO Configure autoboot
+
+#- name: TODO Configure splash screen
+
+#- name: TODO Configure wallpaper

@@ -1,0 +1,17 @@
+---
+# file: mame.yml
+- name: Install mame
+  apt: pkg=mame state=installed update_cache=true
+  become: yes
+  become_method: sudo
+
+- name: Copy mame config file
+  copy: src=mame.ini dest=/etc/mame/mame.ini
+  become: yes
+  become_method: sudo
+
+- name: Setup game folder
+  file: path=./mame/roms state=directory
+
+- name: TODO Add roms
+  file: path=./mame/roms/.feed_me_games state=touch
