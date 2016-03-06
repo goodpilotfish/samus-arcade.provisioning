@@ -1,0 +1,36 @@
+---
+# file: mame.yml
+- name: Copy attract package
+  unarchive: src=attract-2.0.0-rc2.tar.gz dest=.
+
+- name: Install all dependencies
+  apt: name={{item}} state=present
+  with_items:
+    - pkg-config
+    - libavformat-dev
+    - libavcodec-dev
+    - libswscale-dev
+    - libavutil-dev
+    - libswresample-dev
+    - libavresample-dev
+    - fontconfig
+    - libarchive-dev
+    - libsfml-dev
+    - libopenal-dev
+    - zlib1g-dev
+    - libfreetype6-dev
+    - libjpeg-dev
+    - libglu1-mesa-dev
+    - libfreetype6-dev
+  become: yes
+  become_method: sudo
+
+- name: Build source code part 1
+  command: make -j3 chdir=attract-2.0.0-rc2/
+
+- name: Build source code part 2
+  command: make install chdir=attract-2.0.0-rc2/
+  become: yes
+  become_method: sudo
+
+#- name: Move files
