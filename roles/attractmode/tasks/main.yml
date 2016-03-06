@@ -36,7 +36,8 @@
   become: yes
   become_method: sudo
 
-- name: Make attract configuration file avaliable
-  file: src=~/attract-2.0.0-rc2/config dest=./.attract/config state=link
+#- name: Make attract configuration file avaliable
+#  file: src=~/attract-2.0.0-rc2/config/* dest=./.attract state=link
 
-#- name: Copy mame config file
+- name: Copy mame config file
+  copy: src=attract.cfg dest=.
