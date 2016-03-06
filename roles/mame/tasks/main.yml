@@ -1,7 +1,7 @@
 ---
 # file: mame.yml
 - name: Install mame
-  apt: pkg=mame state=installed update_cache=true
+  apt: name=mame state=present
   become: yes
   become_method: sudo
 
