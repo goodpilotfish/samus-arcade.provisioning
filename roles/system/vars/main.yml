@@ -1,0 +1,10 @@
+---
+# file: main.yml
+
+# created with:
+# python -c 'import crypt; print crypt.crypt("this is my password", "secret")'
+janitor_password: bi32j/s3e57uw
+
+# created with:
+# python -c 'import crypt; print crypt.crypt("this is my password", "secret")'
+gamer_password: c.DT9nWTH.TcM
