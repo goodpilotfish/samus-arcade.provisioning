@@ -5,13 +5,22 @@
   become: yes
   become_method: sudo
 
+- name: Set correct group for shared resources
+  file: path=/etc/mame/ state=directory group=players
+  become: yes
+  become_method: sudo
+
 - name: Copy mame config file
-  copy: src=mame.ini dest=/etc/mame/mame.ini
+  copy: src=mame.ini dest=/etc/mame/mame.ini group=players
   become: yes
   become_method: sudo
 
 - name: Setup game folder
-  file: path=./mame/roms state=directory
+  file: path=/etc/mame/roms state=directory group=players
+  become: yes
+  become_method: sudo
 
 - name: TODO Add roms
-  file: path=./mame/roms/.feed_me_games state=touch
+  file: path=/etc/mame/roms/.feed_me_games state=touch group=players
+  become: yes
+  become_method: sudo
